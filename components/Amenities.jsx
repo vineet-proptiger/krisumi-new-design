@@ -12,7 +12,7 @@ const ArcIcon = () => (
     width="28" height="14" viewBox="0 0 28 14" fill="none"
     style={{ display: 'inline-block', marginRight: '10px', verticalAlign: 'middle', marginBottom: '3px' }}
   >
-    <path d="M2 12 Q14 2 26 12" stroke="#684C1B" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+    <path d="M2 12 Q14 2 26 12" stroke="#684C1B" strokeWidth="1.5" fill="none" strokeLinecap="round" />
   </svg>
 )
 
@@ -69,7 +69,7 @@ const Amenities = () => {
           margin: '0 auto',
         }}>
           <CurvedCorners color="#e5e7eb" bg="#fff" />
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-[#e5e7eb]">
             {newAmenities.map((item, idx) => (
               <div key={idx} className="bg-white flex flex-col items-center group" style={{
@@ -80,7 +80,7 @@ const Amenities = () => {
                 <div className="w-[80px] h-[80px] rounded-full flex items-center justify-center mb-6 text-white group-hover:scale-105 transition-transform duration-300" style={{ background: '#A9262D' }}>
                   <item.icon size={36} strokeWidth={1.5} />
                 </div>
-                
+
                 {/* Title */}
                 <h3 style={{
                   fontFamily: F_JOST, fontSize: '15px', fontWeight: '600',
@@ -88,7 +88,7 @@ const Amenities = () => {
                 }}>
                   {item.title}
                 </h3>
-                
+
                 {/* Description */}
                 <p style={{
                   fontFamily: F_SANS, fontSize: '13px', color: '#6b7280',
@@ -98,7 +98,7 @@ const Amenities = () => {
                 </p>
               </div>
             ))}
-            
+
             {/* Empty 12th cell to complete the grid nicely on desktop */}
             <div className="hidden lg:block bg-white" />
           </div>

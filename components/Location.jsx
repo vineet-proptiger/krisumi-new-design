@@ -57,13 +57,13 @@ const Location = () => {
                 color: '#fff',
                 fontFamily: F_JOST,
                 fontWeight: '600',
-                fontSize: '14.5px',
+                fontSize: '13.5px',
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 borderBottom: '1px solid #D5C2A8',
               }}>
-                <div style={{ padding: '16px 20px', borderRight: '1px solid #D5C2A8' }}>LOCATION</div>
-                <div style={{ padding: '16px 20px', textAlign: 'center' }}>APPROX. DRIVE TIME*</div>
+                <div style={{ padding: '10px 16px', borderRight: '1px solid #D5C2A8' }}>LOCATION</div>
+                <div style={{ padding: '10px 16px', textAlign: 'center' }}>APPROX. DRIVE TIME*</div>
               </div>
 
               {/* Table Rows */}
@@ -75,14 +75,14 @@ const Location = () => {
                     background: i % 2 === 0 ? '#F4EFE6' : '#EAE5DC', // Alternating row colors
                     color: '#684C1B',
                     fontFamily: F_SANS,
-                    fontSize: '14.5px',
+                    fontSize: '13.5px',
                     fontWeight: '600',
                     borderBottom: i < locationItems.length - 1 ? '1px solid #D5C2A8' : 'none',
                   }}>
-                    <div style={{ padding: '14px 20px', borderRight: '1px solid #D5C2A8' }}>
+                    <div style={{ padding: '7px 16px', borderRight: '1px solid #D5C2A8', display: 'flex', alignItems: 'center' }}>
                       {item.name}
                     </div>
-                    <div style={{ padding: '14px 20px', textAlign: 'center' }}>
+                    <div style={{ padding: '7px 16px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {item.time}
                     </div>
                   </div>
