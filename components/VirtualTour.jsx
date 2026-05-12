@@ -8,7 +8,7 @@ const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const VirtualTour = ({ setIsOpen }) => {
   return (
     <section id="virtual-tour" className="relative w-full h-[60vh] min-h-[400px] md:min-h-[550px] flex items-center justify-center cursor-pointer overflow-hidden group" onClick={() => setIsOpen(true)}>
-      
+
       <style>{`
         .ripple-btn {
           position: relative;
@@ -71,7 +71,7 @@ const VirtualTour = ({ setIsOpen }) => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white flex flex-col items-center">
-        
+
         {/* Play Icon Circle */}
         <div className="relative mb-10 flex items-center justify-center">
           <div className="ripple-btn">
