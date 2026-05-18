@@ -18,7 +18,7 @@ const Hero = ({ setIsOpen }) => {
     <section style={{
       position: 'relative',
       marginTop: '80px',
-      height: 'calc(100vh - 80px)',
+      height: 'max(calc(100vh - 80px), 56.25vw)',
       minHeight: '520px',
       overflow: 'hidden',
       background: '#1a1a1a',
