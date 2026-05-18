@@ -1,19 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { logoImages } from '../lib/images'
 
 const NAV_TEXT = '#684C1B'
 const F_JOST   = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS   = 'var(--font-sans), Open Sans, sans-serif'
 
-const projectLinks = [
-  'Waterside Residences',
-  'Waterfall Suites II',
-  'Waterfall Suites',
-  'Waterfall Residences',
-  'Waterside Residences The Forest Reserve',
-]
 
 const aStyle = {
   fontFamily: F_JOST, fontSize: '13px', fontWeight: '600',
@@ -23,9 +16,8 @@ const aStyle = {
 }
 
 const Navbar = ({ setIsOpen }) => {
-  const [mobileOpen,   setMobileOpen]   = useState(false)
-  const [scrolled,     setScrolled]     = useState(false)
-  const [projectsOpen, setProjectsOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled,   setScrolled]   = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -77,45 +69,6 @@ const Navbar = ({ setIsOpen }) => {
           className="hidden lg:flex"
           style={{ alignItems: 'center', gap: '36px', marginLeft: '52px' }}
         >
-          {/* Projects dropdown */}
-          <div
-            style={{ position: 'relative' }}
-            onMouseEnter={() => setProjectsOpen(true)}
-            onMouseLeave={() => setProjectsOpen(false)}
-          >
-            <button
-              style={{
-                ...aStyle,
-                background: 'none', border: 'none', padding: 0,
-                display: 'inline-flex', alignItems: 'center', gap: '3px',
-              }}
-              onMouseEnter={hover} onMouseLeave={unhover}
-            >
-              PROJECTS <ChevronDown size={13} />
-            </button>
-
-            {projectsOpen && (
-              <div style={{
-                position: 'absolute', top: 'calc(100% + 8px)', right: 0,
-                background: '#fff', minWidth: '280px',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-                borderTop: '2px solid #A9262D', zIndex: 200,
-              }}>
-                {projectLinks.map((name, i) => (
-                  <a key={i} href="#" style={{
-                    display: 'block', padding: '11px 18px',
-                    fontFamily: F_SANS, fontSize: '13px', color: '#3A3B3C',
-                    borderBottom: i < projectLinks.length - 1 ? '1px solid #f0f0f0' : 'none',
-                    textDecoration: 'none', transition: 'all 0.2s',
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.color = '#A9262D'; e.currentTarget.style.background = '#fef9f0' }}
-                  onMouseLeave={e => { e.currentTarget.style.color = '#3A3B3C'; e.currentTarget.style.background = '#fff' }}
-                  >{name}</a>
-                ))}
-              </div>
-            )}
-          </div>
-
           <a href="#" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>CONTACT US</a>
         </div>
 
@@ -140,7 +93,6 @@ const Navbar = ({ setIsOpen }) => {
           {[
             { label: 'HOME',       href: '#'        },
             { label: 'ABOUT US',   href: '#overview' },
-            { label: 'PROJECTS',   href: '#'        },
             { label: 'CONTACT US', href: '#'        },
           ].map(({ label, href }, i) => (
             <a key={i} href={href}
