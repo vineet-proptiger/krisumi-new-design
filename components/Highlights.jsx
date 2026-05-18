@@ -98,7 +98,7 @@ const highlights = [
 
 const Highlights = ({ setIsOpen }) => (
   <section id="highlights" style={{ background: BG, padding: '60px 0 72px' }}>
-    <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 32px' }}>
+    <div className="px-4 sm:px-8" style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
       {/* Heading */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }} data-aos="fade-up">
@@ -120,18 +120,17 @@ const Highlights = ({ setIsOpen }) => (
         style={{
           position: 'relative',
           border: `1px solid ${BORDER_COLOR}`,
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          background: BG,
+          overflow: 'hidden',
         }}
       >
         <CurvedCorners bg={BG} />
 
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px]" style={{ background: BORDER_COLOR }}>
         {highlights.map(({ title, desc, Icon }, i) => (
           <div key={i} style={{
-            padding: '44px 28px 36px',
+            padding: '36px 20px 28px',
             textAlign: 'center',
-            borderRight: i < 3 ? `1px solid ${BORDER_COLOR}` : 'none',
+            background: BG,
           }}>
             {/* Dark red circle */}
             <div style={{
@@ -158,6 +157,7 @@ const Highlights = ({ setIsOpen }) => (
             }}>{desc}</p>
           </div>
         ))}
+        </div>
       </div>
 
     </div>

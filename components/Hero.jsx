@@ -52,14 +52,8 @@ const Hero = ({ setIsOpen }) => {
       }} />
 
       {/* ── Dot indicators ── */}
-      <div style={{
-        position: 'absolute',
-        bottom: '80px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex', gap: '8px',
-        zIndex: 10,
-      }}>
+      <div className="absolute left-1/2 -translate-x-1/2 flex gap-2 z-10 bottom-[150px] sm:bottom-20"
+        style={{ }}>
         {slides.map((_, idx) => (
           <button key={idx} onClick={() => setCurrent(idx)} style={{
             width: current === idx ? '32px' : '8px',
@@ -74,15 +68,10 @@ const Hero = ({ setIsOpen }) => {
       </div>
 
       {/* ── Bottom row: left identity + right CTA ── */}
-      <div style={{
-        position: 'absolute',
-        bottom: 0, left: 0, right: 0,
-        display: 'flex',
-        alignItems: 'flex-end',
-        justifyContent: 'space-between',
-        padding: '0 40px 28px',
-        zIndex: 10,
-      }}>
+      <div
+        className="absolute bottom-0 left-0 right-0 flex flex-col sm:flex-row items-start sm:items-end justify-between px-4 sm:px-10 pb-5 sm:pb-7 gap-4 sm:gap-0"
+        style={{ zIndex: 10 }}
+      >
 
         {/* Bottom-left: wave + project name */}
         <div style={{ color: '#fff' }}>

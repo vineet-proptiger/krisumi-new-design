@@ -59,9 +59,9 @@ const Overview = () => (
     id="overview"
     style={{ background: '#fff', padding: '72px 0 80px', borderBottom: '1px solid #f0ede6' }}
   >
-    <div style={{
+    <div className="px-4 sm:px-8" style={{
       maxWidth: '860px', margin: '0 auto',
-      padding: '0 32px', textAlign: 'center',
+      textAlign: 'center',
     }}>
 
       {/* ── Section Heading ── */}
@@ -108,18 +108,17 @@ const Overview = () => (
         style={{
           position: 'relative',
           border: '1px solid #D5C2A8',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
           maxWidth: '780px',
           margin: '0 auto',
+          overflow: 'hidden',
         }}
       >
         <CurvedCorners />
 
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px]" style={{ background: '#D5C2A8' }}>
         {infoItems.map((item, i) => (
-          <div key={i} style={{
+          <div key={i} className="bg-white" style={{
             padding: '26px 20px',
-            borderRight: i < 2 ? '1px solid #D5C2A8' : 'none',
             textAlign: 'center',
           }}>
             {/* Label */}
@@ -140,6 +139,7 @@ const Overview = () => (
             </p>
           </div>
         ))}
+        </div>
       </div>
 
     </div>
